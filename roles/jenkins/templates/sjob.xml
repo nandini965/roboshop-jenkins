@@ -1,10 +1,10 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@1385.vb_58b_86ea_fff1">
+<flow-definition plugin="workflow-job@1308.v58d48a_763b_31">
     <description></description>
     <keepDependencies>false</keepDependencies>
     <properties/>
-    <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3821.v9d3888c583b_1">
-        <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.1">
+    <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3673.v5b_dd74276262">
+        <scm class="hudson.plugins.git.GitSCM" plugin="git@5.0.2">
             <configVersion>2</configVersion>
             <userRemoteConfigs>
                 <hudson.plugins.git.UserRemoteConfig>
@@ -20,7 +20,7 @@
             <submoduleCfg class="empty-list"/>
             <extensions/>
         </scm>
-        <scriptPath>Jenkinsfile</scriptPath>
+        <scriptPath>{{item.file_name}}</scriptPath>
         <lightweight>true</lightweight>
     </definition>
     <triggers/>
