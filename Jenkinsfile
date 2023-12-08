@@ -14,17 +14,18 @@ pipeline {
    }
 
    stage ('terraform-init') {
-   step {
+   steps {
    sh 'terraform-init backend_config=env-dev state.tfvars'
    }
    }
    stage ('terraform-apply') {
-   step {
+   steps {
    sh 'terraform-apply -auto-approve=env-dev main.tfvars'
    }
    }
    post {
    always {
    clear ws()
+   }
    }
    }
