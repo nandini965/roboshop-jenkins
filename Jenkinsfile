@@ -4,21 +4,21 @@ pipeline {
     label 'workstation'
    }
   }
- }
+
   parameters {
-    choice(name: 'env', choices('dev','prod') description: 'pickup environment' )
+    choice(name: 'env', choices('dev','prod') description: 'pick environment' )
  }
 
    options {
    ansicolor(xterm)
    }
 
-   stage 'terraform-init' {
+   stage ('terraform-init') {
    step {
    sh 'terraform-init backend_config=env-dev state.tfvars'
    }
    }
-   stage 'terraform-apply' {
+   stage ('terraform-apply') {
    step {
    sh 'terraform-apply -auto-approve=env-dev main.tfvars'
    }
