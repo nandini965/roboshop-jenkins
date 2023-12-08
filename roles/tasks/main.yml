@@ -1,0 +1,4 @@
+- name: single branch pipeline
+  ansible.builtin.include_tasks:
+    file: sjob.yml
+    loops: “{{ sjobs }}”

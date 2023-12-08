@@ -1,0 +1,3 @@
+- name: create jenkins jobs
+  host: localhost
+  connection: local
