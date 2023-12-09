@@ -1,33 +1,44 @@
-def call () {
-pipeline {
-    agent {
-        node {
-            label 'workstation'
-        }
-    }
-}
+def call() {
+    pipeline {
 
-    parameters {
-        choice(name: 'env', choices('dev', 'prod') description: 'pick environment')
+        agent {
+            node {
+                label 'workstation'
+            }
+        }
+
+        options {
+            ansiColor('xterm')
+        }
+
+        parameters {
+            choice(name: 'env', choices: ['dev', 'prod'], description: 'Pick environment')
+            choice(name: 'action', choices: ['apply', 'destroy'], description: 'Pick Action')
+        }
+
+        stages {
+
+            stage('Terraform INIT') {
+                steps {
+                    sh 'terraform init -backend-config=env-${env}/state.tfvars'
+                }
+            }
+
+            stage('Terraform Apply') {
+                steps {
+                    sh 'terraform ${action} -auto-approve -var-file=env-${env}/main.tfvars'
+                }
+            }
+
+        }
+
+        post {
+            always {
+                cleanWs()
+            }
+        }
+
     }
 
-    options {
-        ansicolor(xterm)
-    }
 
-    stage('terraform-init') {
-        step {
-            sh 'terraform-init backend_config=env-dev state.tfvars'
-        }
-    }
-    stage('terraform-apply') {
-        step {
-            sh 'terraform-apply -auto-approve=env-dev main.tfvars'
-        }
-    }
-    post {
-        always {
-            clear ws()
-        }
-    }
 }
