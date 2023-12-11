@@ -14,7 +14,7 @@
 #  when: jenkins_job_status.failed or override
 
 - name: Create Jenkins Jobs
-  community.general.jenkins_job:
+  community.general.jenkins_jobs:
     config: "{{ lookup('file', '/tmp/test.xml') }}"
     name: "{{item.job_name}}"
     password: admin123
