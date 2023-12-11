@@ -24,7 +24,7 @@ def call() {
     }
      stage ('checkmark sca') {
          step {
-
+        sh
          }
      }
 
