@@ -1,7 +1,7 @@
-sjobs:
-  - { git_repo_url: https://github.com/nandini965/roboshop-terraform.git, job_name: roboshop-terraform, file_name: Jenkinsfile }
-  - { git_repo_url: https://github.com/nandini965/roboshop-ansible.git, job_name: roboshop-ansible, file_name: Jenkinsfile }
-  - { git_repo_url: https://github.com/nandini965/aws-ssm-parameter-store.git, job_name: aws-ssm-paramter-store, file_name: Jenkinsfile }
+#sjobs:
+#  - { git_repo_url: https://github.com/nandini965/roboshop-terraform.git, job_name: roboshop-terraform, file_name: Jenkinsfile }
+#  - { git_repo_url: https://github.com/nandini965/roboshop-ansible.git, job_name: roboshop-ansible, file_name: Jenkinsfile }
+#  - { git_repo_url: https://github.com/nandini965/aws-ssm-parameter-store.git, job_name: aws-ssm-paramter-store, file_name: Jenkinsfile }
 #  - { git_repo_url: https://github.com/nandini965/aws-ssm-parameter-store.git, job_name: aws-ssm-ps-docker, file_name: Jenkinsfile-ps }
 #  - { git_repo_url: https://github.com/nandini965/roboshop-helm.git, job_name: roboshop-helm, file_name: Jenkinsfile }
 #  - { git_repo_url: https://github.com/nandini965/schema-loader.git, job_name: schema-loader, file_name: Jenkinsfile }
