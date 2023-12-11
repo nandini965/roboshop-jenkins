@@ -10,7 +10,7 @@ mjobs:
  - { git_repo_url: https://github:com/nandini965/shipping:git, job_name: shipping, file_name: Jenkinsfile }
  - { git_repo_url: https://github:com/nandini965/payment:git, job_name: payment, file_name: Jenkinsfile }
 # - { git_repo_url: https://github:com/nandini965/cart:git, job_name: cart, file_name: Jenkinsfile }
- - { git_repo_url: https://github:com/nandini965/user:git, job_name:user, file_name: Jenkinsfile }
+ - { git_repo_url: https://github:com/nandini965/user:git, job_name: user, file_name: Jenkinsfile }
  - { git_repo_url: https://github:com/nandini965/frontend:git, job_name: frontend, file_name: Jenkinsfile }
  - { git_repo_url: https://github:com/nandini965/catalogue:git, job_name: catalogue, file_name: Jenkinsfile }
  - { git_repo_url: https://github:com/nandini965/dispatch:git, job_name: dispatch, file_name: Jenkinsfile }
