@@ -18,7 +18,7 @@ def call() {
 
     stage 'checkmark sast' {
         step {
-            sh
+            sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host_url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123'
         }
     }
     stage 'checkmark sca' {
