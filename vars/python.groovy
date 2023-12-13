@@ -10,20 +10,20 @@ def call() {
         ansicolor(xterm)
 
     }
-    stage 'code quality test' {
+    stage code quality test {
         step {
+            sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host_url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123'
             sh run code quality test
         }
     }
 
-    stage 'checkmark sast' {
+    stage checkmark sast {
         step {
-            sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host_url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123'
-        }
+            sh 'run checkmark sast'
     }
-    stage 'checkmark sca' {
+    stage checkmark sca {
         step {
-
+          sh 'run checkmark sca'
         }
     }
 
