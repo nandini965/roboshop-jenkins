@@ -21,28 +21,30 @@ def call() {
                 }
             }
 
-            stage('unit test cases') {
+            stage('Unit Test Cases') {
                 steps {
-                    sh 'echo unit test'
+                    sh 'echo Unit tests'
+                    //sh 'npm test'
                 }
             }
 
-            stage('checkmark sast scan') {
+            stage('CheckMarx SAST Scan') {
                 steps {
-                    sh 'echo checkmark sast scan'
+                    sh 'echo Checkmarx Scan'
                 }
             }
-            stage('checkmark sca scan') {
+
+            stage('CheckMarx SCA Scan') {
                 steps {
-                    sh 'echo checkmark sca scan'
+                    sh 'echo Checkmarx SCA Scan'
                 }
             }
+
         }
-
-        post {
-            always {
-                clear ws()
+            post {
+                always {
+                    clear ws()
+                }
             }
         }
     }
-}
