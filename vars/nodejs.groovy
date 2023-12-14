@@ -45,7 +45,10 @@ def call() {
                         env.TAG_NAME ==~ ".*"
                     }
                 }
-
+             steps {
+                 sh 'env'
+                 sh 'echo release application'
+             }
             }
         }
         post {
