@@ -39,6 +39,12 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
+            stage('release application')
+            when {
+                expression {
+                    env.TAG_NAME ==~ ".*"
+                }
+            }
 
         }
         post {
