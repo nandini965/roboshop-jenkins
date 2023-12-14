@@ -9,7 +9,7 @@ def call() {
         }
 
         options {
-            ansicolor('xterm')
+            ansiColor('xterm')
         }
 
         stages {
