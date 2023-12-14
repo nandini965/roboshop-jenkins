@@ -1,38 +1,39 @@
 
 def call() {
     pipeline {
+
         agent {
             node {
-                lable 'workstation'
+                label 'workstation'
             }
         }
 
         options {
             ansicolor('xterm')
-
         }
+
         stages {
-            stage('code quality test') {
-                step {
+            stage('code quality') {
+                steps {
                     sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host_url=http://172.31.34.31:9000 -Dsonar.login=admin -Dsonar.password=admin123'
 
                     // sh run code quality test
                 }
             }
 
-            stage('unit testing') {
-                step {
+            stage('unit test cases') {
+                steps {
                     sh 'echo unit test'
                 }
             }
 
-            stage('checkmark sast') {
-                step {
+            stage('checkmark sast scan') {
+                steps {
                     sh 'echo checkmark sast scan'
                 }
             }
             stage('checkmark sca scan') {
-                step {
+                steps {
                     sh 'echo checkmark sca scan'
                 }
             }
