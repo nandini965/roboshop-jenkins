@@ -15,7 +15,7 @@
             stage('code compile') {
                 sh 'maven compile'
             }
-        }
+
         stage('code quality') {
             steps {
 
