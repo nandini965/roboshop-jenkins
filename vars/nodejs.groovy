@@ -47,7 +47,7 @@ def call() {
                 }
              steps {
                  sh 'env'
-                 sh 'echo release application'
+                 sh 'curl -v -u admin:admin123 --upload-file pom.xml http://172.31.33.0:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom'
              }
             }
         }
