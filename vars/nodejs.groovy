@@ -39,18 +39,8 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-            stage('release application') {
-                when {
-                    expression {
-                        env.TAG_NAME ==~ ".*"
-                    }
-                }
-             steps {
-                 sh 'env'
-                 sh 'curl -v -u admin:admin123 --upload-file pom.xml http://172.31.33.0:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom'
-             }
-            }
         }
+
         post {
             always {
                 cleanWs()
