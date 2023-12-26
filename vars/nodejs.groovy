@@ -45,8 +45,8 @@
                        }
                    }
                    steps {
-                       sh 'env'
-                       sh 'curl -v -u admin:admin123 --upload-file server.js http://172.31.33.0:8081/repository/cart/server.js'
+                       sh 'zip -r ${component}-${TAG_NAme}.zip node_modules server.js VERSION'
+                       sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.33.0:8081/repository/cart/server.js'
                    }
                }
            }
