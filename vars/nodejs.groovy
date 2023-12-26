@@ -38,6 +38,13 @@
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
+            stage('release application') {
+                When {
+                    expression {
+                        env TAG_NAME ".*"
+                    }
+                }
+            }
         }
 
         post {
