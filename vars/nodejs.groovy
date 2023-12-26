@@ -32,16 +32,15 @@
                     sh 'echo Checkmarx Scan'
                 }
             }
-
             stage('CheckMarx SCA Scan') {
                 steps {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-            stage('release application') {
-                When {
+            stage('Release Application') {
+                when {
                     expression {
-                        env TAG_NAME==~".*"
+                        env.TAG_NAME ==~ ".*"
                     }
                 }
             }
