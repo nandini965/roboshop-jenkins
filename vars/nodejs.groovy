@@ -38,14 +38,15 @@
                    }
                }
                stage('Release Application') {
-                   steps {
-                       sh 'env'
-                       sh 'echo release application'
-                   }
+
                    when {
                        expression {
                            env.TAG_NAME ==~ ".*"
                        }
+                   }
+                   steps {
+                       sh 'env'
+                       sh 'echo release application'
                    }
                }
            }
