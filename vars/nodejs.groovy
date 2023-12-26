@@ -41,7 +41,7 @@
             stage('release application') {
                 When {
                     expression {
-                        env TAG_NAME ".*"
+                        env TAG_NAME==~".*"
                     }
                 }
             }
