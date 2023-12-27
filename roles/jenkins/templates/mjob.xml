@@ -4,8 +4,6 @@
     <properties/>
     <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1105.v472604208c55">
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-    <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1135.v8de8e7899051">
-        <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </folderViews>
     <healthMetrics/>
     <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.1135.v8de8e7899051">
