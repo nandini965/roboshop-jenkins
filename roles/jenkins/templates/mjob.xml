@@ -2,7 +2,17 @@
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@756.v891d88f2cd46">
     <actions/>
     <description></description>
-    <properties/>
+    <properties>
+        <org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty plugin="multibranch-action-triggers@1.8.6">
+            <createActionJobsToTrigger></createActionJobsToTrigger>
+            <deleteActionJobsToTrigger></deleteActionJobsToTrigger>
+            <actionJobsToTriggerOnRunDelete></actionJobsToTriggerOnRunDelete>
+            <quitePeriod>0</quitePeriod>
+            <branchIncludeFilter>*</branchIncludeFilter>
+            <branchExcludeFilter></branchExcludeFilter>
+            <additionalParameters/>
+        </org.jenkinsci.plugins.workflow.multibranch.PipelineTriggerProperty>
+    </properties>
     <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1135.v8de8e7899051">
         <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
     </folderViews>
