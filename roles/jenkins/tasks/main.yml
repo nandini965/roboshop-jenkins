@@ -1,7 +1,7 @@
-- name: Single Branch Pipelines
-  ansible.builtin.include_tasks:
-    file: sjob.yml
-  loop: "{{sjobs}}"
+#- name: Single Branch Pipelines
+#  ansible.builtin.include_tasks:
+#    file: sjob.yml
+#  loop: "{{sjobs}}"
 
 - name: Multi Branch Pipelines
   ansible.builtin.include_tasks:
