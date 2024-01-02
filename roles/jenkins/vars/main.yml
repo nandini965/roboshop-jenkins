@@ -4,10 +4,9 @@ sjobs:
   - { git_repo_url: https://github.com/nandini965/aws-ssm-parameter-store.git, job_name: aws-ssm-parameter-store }
 
 mjobs:
+ - { git_repo_url: https://github.com/nandini965/catalogue.git, job_name: catalogue }
  - { git_repo_url: https://github.com/nandini965/payment.git, job_name: payment }
  - { git_repo_url: https://github.com/nandini965/cart.git, job_name: cart }
  - { git_repo_url: https://github.com/nandini965/user.git, job_name: user }
  - { git_repo_url: https://github.com/nandini965/frontend.git, job_name: frontend }
- - { git_repo_url: https://github.com/nandini965/catalogue.git, job_name: catalogue }
  - { git_repo_url: https://github.com/nandini965/dispatch.git, job_name: dispatch }
-#
