@@ -46,11 +46,12 @@
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
+            stage('Release application') {
             when {
                 expression {
                     env.TAG_NAME ==~ ".*"
                 }
-
+            }
             steps {
                 sh 'mvn package; cp target/${component}-1.0.jar ${component}.jar'
                 sh 'echo $TAG_NAME >VERSION'
