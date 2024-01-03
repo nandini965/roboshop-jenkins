@@ -39,7 +39,7 @@
                        sh 'echo Checkmarx SCA Scan'
                    }
                }
-               stage('Release Application') {
+               stage('release application') {
 
                    when {
                        expression {
@@ -61,3 +61,4 @@
            }
        }
    }
+
