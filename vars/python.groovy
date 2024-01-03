@@ -1,4 +1,4 @@
-def cal() {
+def call() {
     pipeline {
 
         agent {
