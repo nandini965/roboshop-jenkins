@@ -1,4 +1,4 @@
-def call() {
+def cal() {
     pipeline {
 
         agent {
@@ -6,19 +6,19 @@ def call() {
                 label 'workstation'
             }
         }
-
         options {
             ansiColor('xterm')
         }
         environment {
             NEXUS = credentials('NEXUS')
         }
+
         stages {
             stage('code quality') {
                 steps {
 
-                    //   sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygates.wait=true'
-                    sh 'echo code quality test'
+                    //   sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygates.wait=true -Dsonar.java.binaries=./target'
+                    sh 'echo code quality'
                 }
             }
 
@@ -34,6 +34,7 @@ def call() {
                     sh 'echo Checkmarx Scan'
                 }
             }
+
             stage('CheckMarx SCA Scan') {
                 steps {
                     sh 'echo Checkmarx SCA Scan'
