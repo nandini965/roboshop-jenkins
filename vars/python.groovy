@@ -42,7 +42,8 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-            stage('release application') {
+
+            stage('Release Application') {
                 when {
                     expression {
                         env.TAG_NAME ==~ ".*"
@@ -55,10 +56,14 @@ def call() {
                 }
             }
         }
+
         post {
             always {
                 cleanWs()
             }
         }
+
     }
+
+
 }
