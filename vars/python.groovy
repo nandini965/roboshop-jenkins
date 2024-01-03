@@ -10,24 +10,22 @@ def call() {
         options {
             ansiColor('xterm')
         }
-
         environment {
             NEXUS = credentials('NEXUS')
         }
-
         stages {
-            stage('Code Quality') {
+            stage('code quality') {
                 steps {
-//          sh 'ls -l'
-//          sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygate.wait=true'
-                    sh 'echo Code Quality'
+
+                    //   sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.32.12:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygates.wait=true'
+                    sh 'echo code quality test'
                 }
             }
 
             stage('Unit Test Cases') {
                 steps {
                     sh 'echo Unit tests'
-                    //sh 'python3.6 -m unittest'
+                    //sh 'npm test'
                 }
             }
 
@@ -36,14 +34,13 @@ def call() {
                     sh 'echo Checkmarx Scan'
                 }
             }
-
             stage('CheckMarx SCA Scan') {
                 steps {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-
             stage('Release Application') {
+
                 when {
                     expression {
                         env.TAG_NAME ==~ ".*"
@@ -56,14 +53,10 @@ def call() {
                 }
             }
         }
-
         post {
             always {
                 cleanWs()
             }
         }
-
     }
-
-
 }
