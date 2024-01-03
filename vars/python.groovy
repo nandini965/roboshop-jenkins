@@ -39,8 +39,7 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
-            stage('Release Application') {
-
+            stage('Release application') {
                 when {
                     expression {
                         env.TAG_NAME ==~ ".*"
@@ -48,7 +47,7 @@ def call() {
                 }
                 steps {
                     sh 'echo $TAG_NAME >VERSION'
-                    sh 'zip -r ${component}-${TAG_NAME}.zip*.ini*.py*.txt VERSION'
+                    sh 'zip -r ${component}-${TAG_NAME}.zip *.ini *.py *.txt VERSION'
                     sh 'curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${component}-${TAG_NAME}.zip http://172.31.33.0:8081/repository/${component}/${component}-${TAG_NAME}.zip'
                 }
             }
