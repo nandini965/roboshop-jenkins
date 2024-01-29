@@ -1,12 +1,12 @@
 
-- name: Check if the Jenkins job exists or not
-  community.general.jenkins_job_info:
-    name: "{{item.job_name}}"
-    user: admin
-    password: admin123
-    url: http://172.31.34.31:8080
-  register: jenkins_job_status
-  ignore_errors: true
+#- name: Check if the Jenkins job exists or not
+#  community.general.jenkins_job_info:
+#    name: "{{item.job_name}}"
+#    user: admin
+#    password: admin123
+#    url: http://172.31.34.31:8080
+#  register: jenkins_job_status
+#  ignore_errors: true
 
 - name: Copy Xml File
   ansible.builtin.template:
