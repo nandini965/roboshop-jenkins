@@ -17,23 +17,8 @@
     <keepDependencies>false</keepDependencies>
     <properties>
         <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-            <triggers>
-                <hudson.triggers.SCMTrigger>
-                    <spec>H/2 * * * *</spec>
-                    <ignorePostCommitHooks>false</ignorePostCommitHooks>
-                </hudson.triggers.SCMTrigger>
-            </triggers>
+            <triggers/>
         </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-        <hudson.model.ParametersDefinitionProperty>
-            <parameterDefinitions>
-                <hudson.model.StringParameterDefinition>
-                    <name>PERSON</name>
-                    <description>Who should I say hello to?</description>
-                    <defaultValue>Mr Jenkins</defaultValue>
-                    <trim>false</trim>
-                </hudson.model.StringParameterDefinition>
-            </parameterDefinitions>
-        </hudson.model.ParametersDefinitionProperty>
     </properties>
     <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@3853.vb_a_490d892963">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.1">
