@@ -2,7 +2,7 @@
 #  - { git_repo_url: https://github.com/nandini965/roboshop-terraform.git, job_name: roboshop-terraform }
 #  - { git_repo_url: https://github.com/nandini965/roboshop-ansible.git, job_name: roboshop-ansible }
 #  - { git_repo_url: https://github.com/nandini965/aws-ssm-parameter-store.git, job_name: aws-ssm-parameter-store }
-- { git_repo_url: https://github.com/nandini965/roboshop-helm, job_name: roboshop-helm }
+- { git_repo_url: https://github.com/nandini965/roboshop-helm.git, job_name: roboshop-helm, ile_name: Jenkinsfile }
 
 #
 #mjobs:
