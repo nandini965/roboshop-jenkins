@@ -52,7 +52,7 @@
                       // sh 'zip -r ${component}-${TAG_NAME}.zip node_modules server.js VERSION ${schema_dir}'
                        //sh 'curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${component}-${TAG_NAME}.zip http://172.31.27.141:8081/repository/${component}/${component}-${TAG_NAME}.zip'
                       sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 115099330984.dkr.ecr.us-east-1.amazonaws.com'
-                       sh 'docker build -t 115099330984.dkr.ecr.us-east-1.amazonaws.com/cart:${TAG_NAME}'
+                       sh 'docker build -t 115099330984.dkr.ecr.us-east-1.amazonaws.com/cart:${TAG_NAME} .'
                        sh 'docker push 115099330984.dkr.ecr.us-east-1.amazonaws.com/cart:${TAG_NAME}'
                    }
                }
